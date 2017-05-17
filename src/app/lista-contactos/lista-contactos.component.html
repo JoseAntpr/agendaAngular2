@@ -10,9 +10,10 @@
       evento click de cada elemento <span> para habilitar la notificación de contacto seleccionado
       al componente padre.
     -->
-    <span (click)="notificarContactoSeleccionado(contacto)">
-      {{contacto}}
-    </span>
+    <span>{{contacto}}</span> 
+    <!--Además, nos subscribimos al evento click de cada elemento <button> para habilitar la notificacion de 'eliminar contacto' al 
+      componente padre. -->
+    <button (click)="notificarEliminacionContacto(contacto)">Elimimar</button>
   </li>
 </ul>
 
