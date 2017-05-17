@@ -15,11 +15,11 @@ export class ListaContactosComponent implements OnInit {
   a eventos que ocurran en este componente (Hijo > Padre). Puesto que la comunicación en este
   sentido se realiza a través de eventos, este atributo debe ser un 'EventEmitter'.
   */
-  @Output() contactoSeleccionado: EventEmitter<string>;
+  @Output() contactoEliminado: EventEmitter<string>;
 
 
   constructor() {
-    this.contactoSeleccionado = new EventEmitter<string>();
+    this.contactoEliminado = new EventEmitter<string>();
    }
 
   ngOnInit() {
@@ -27,7 +27,7 @@ export class ListaContactosComponent implements OnInit {
   // Este manejador se encarga de notificar al componente padre el contacto indicado.
   notificarEliminacionContacto(contacto: string): void {
       // Para notificar, basta con ejecutar la función 'emit' del atributo 'EventEmitter'.
-    this.contactoSeleccionado.emit(contacto);
+    this.contactoEliminado.emit(contacto);
   } 
 
 }

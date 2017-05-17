@@ -11,4 +11,7 @@
   argumentos del evento vienen dados en '$event'. Por último, si queremos evaluar una expresión
   previamente a su asignación como valor de un atributo, marcamos dicho atributo entre corchetes.
 -->
-<lista-contactos [contactos]="_contactos" (contactoSeleccionado)="mostrarContactoSeleccionado($event)"></lista-contactos>
+<lista-contactos 
+  [contactos]="_contactos" 
+  (contactoEliminado)="notificacionEliminacionContacto($event)">
+</lista-contactos>
