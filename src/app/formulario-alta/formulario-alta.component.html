@@ -1,0 +1,47 @@
+<!-- Nomnre del contacto-->
+
+<!-- La directiva 'NgForm' instancia la clase 'FormGroup' correspondiente al formulario
+con '#nombre' creamos Template Reference Variable. Si asignamos como valor la directiva
+'NgForm', obtenemos una referencia a la instacia 'FormGroup' creada.-->
+<form ngForm #contacto="ngForm" (ngSubmit)="notificarCreacionContacto(contacto)">
+    <!-- Con la directiva 'NgModel' obtenemos binding (Enlace a datos) bidireccional -->
+    <div>
+        <label for="nombre">Nombre</label>
+        <input 
+            type="text" 
+            ngModel
+            id="nombre"
+            name="nombre"
+            #nombre="ngModel"
+            minlength="3"
+            required>
+        <div *ngIf="nombre.touched && nombre.invalid" class="mensaje-error"> El nombre es un campo obligatorio</div>
+    </div>  
+    <!-- Correo electrónico del contacto-->
+    <div>
+        <label for="email">Email</label>
+        <input type="text" ngModel id="email" name="email">
+    </div>
+
+    <!--Móvil del contacto -->
+    <div>
+        <label for="movil">Movil</label>
+        <input type="text" ngModel id="movil" name="movil">
+    </div>
+
+    <!-- Cuenta de Facebook del contacto-->
+    <div>
+        <label for="facebook">Facebook</label>
+        <input type="text" ngModel id="facebook" name="facebook">
+    </div>
+
+    <!-- Cuenta de Twitter del contacto -->
+    <div>
+        <label for="twitter">Twitter</label>
+        <input type="text" ngModel id="twitter" name="twitter">
+    </div>
+
+
+    <button type="submit" [disabled]="contacto.invalid">Guardar </button>    
+</form>
+

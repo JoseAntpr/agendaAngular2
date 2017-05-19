@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import {ContactosService} from './contactos.service';
 
+import {Contacto} from './contacto'
+
 
 @Component({
   //Selector CSS del elemento donde se instanciará el componente
@@ -16,7 +18,7 @@ export class AppComponent implements OnInit {
   Aunque los atributos se marquen como privado, siguen siendo 
   visibles en el template */
   private _title: string ;
-  private _contactos: string[];
+  private _contactos: Contacto[];
 
 
 //Para hacer una inyección de dependencias debemos indicar en el constructor
@@ -34,13 +36,19 @@ export class AppComponent implements OnInit {
     this._contactos = this._contactosService.obtenerContactos();
   }
 
+ 
 
   // Este manejador se encarga de mostrar un mensaje con el contacto indicado.
-  notificacionEliminacionContacto(contacto: string): void {
-    if (confirm(`¿Estás seguro de querer eliminar a ${contacto}?`)){
+  notificacionEliminacionContacto(contacto: Contacto): void {
+    if (confirm(`¿Estás seguro de querer eliminar a ${contacto.nombre}?`)){
       this._contactosService.eliminarContacto(contacto);
       this._contactos = this._contactosService.obtenerContactos();
     }
+  }
+
+  darAltaContacto(contacto: Contacto): void{
+    this._contactosService.crearContacto(contacto);
+    this._contactos = this._contactosService.obtenerContactos();
   }
 }
 
