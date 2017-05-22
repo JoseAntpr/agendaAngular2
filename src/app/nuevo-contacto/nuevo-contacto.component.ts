@@ -23,9 +23,14 @@ export class NuevoContactoComponent implements OnInit {
   }
 
   darAltaContacto(contacto: Contacto): void{
-    this._contactosService.crearContacto(contacto);
-    alert('El contacto se ha creado correctamente.');
-    this._router.navigate(["/contactos"]);
+    this._contactosService
+    .crearContacto(contacto)
+    .subscribe((contacto: Contacto) => {
+       alert(`El contacto ${contacto.nombre} se ha creado correctamente`);
+      //Podemos navegar desde un componente a través del 'Route'. Necesitamos
+      //inyectarlo como dependencia para porde accder al mismo
+      this._router.navigate(["/contactos"]);
+    });
     
   }
 

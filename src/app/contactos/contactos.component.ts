@@ -24,14 +24,22 @@ export class ContactosComponent implements OnInit {
   Puesto que no retorna nada, podemos anotarlo como 'void'. Este método se ejecuta al instanciarse la clase 
   'AppComponent'*/
   ngOnInit() {
-    this._contactos = this._contactosService.obtenerContactos();
+    
+    this._contactosService
+        .obtenerContactos()
+        //Solo cuandno nos suscribimos a un 'Observable' con la funcion 'subscribe'
+        // este objseto se invoca y se realizan todas las operaciones indicadas.
+        .subscribe((contactos: Contacto[]) => {
+          this._contactos = contactos;
+
+        });
   }
 
   // Este manejador se encarga de mostrar un mensaje con el contacto indicado.
   notificacionEliminacionContacto(contacto: Contacto): void {
     if (confirm(`¿Estás seguro de querer eliminar a ${contacto.nombre}?`)){
       this._contactosService.eliminarContacto(contacto);
-      this._contactos = this._contactosService.obtenerContactos();
+      //this._contactos = this._contactosService.obtenerContactos();
     }
   }
 
