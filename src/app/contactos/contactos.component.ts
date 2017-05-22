@@ -38,8 +38,15 @@ export class ContactosComponent implements OnInit {
   // Este manejador se encarga de mostrar un mensaje con el contacto indicado.
   notificacionEliminacionContacto(contacto: Contacto): void {
     if (confirm(`¿Estás seguro de querer eliminar a ${contacto.nombre}?`)){
-      this._contactosService.eliminarContacto(contacto);
-      //this._contactos = this._contactosService.obtenerContactos();
+      this._contactosService
+          .eliminarContacto(contacto)
+          .subscribe(
+            //Si todo va bien
+            (contactoEliminado: Contacto) => {
+            this._contactos = this._contactos.filter((c: Contacto): boolean => {
+             return c.id !== contactoEliminado.id;
+            });
+          });
     }
   }
 

@@ -9,7 +9,8 @@ import {ContactosService} from './contactos.service';
 import { FormularioAltaComponent } from './formulario-alta/formulario-alta.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import { ContactosComponent } from './contactos/contactos.component';
-import { NuevoContactoComponent } from './nuevo-contacto/nuevo-contacto.component'
+import { NuevoContactoComponent } from './nuevo-contacto/nuevo-contacto.component';
+import {ApiUrlProvider} from './configuracion'
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,10 @@ import { NuevoContactoComponent } from './nuevo-contacto/nuevo-contacto.componen
     HttpModule,
     AppRoutingModule
   ],
-  providers: [ContactosService],
+  providers: [
+    ContactosService, 
+    ApiUrlProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
