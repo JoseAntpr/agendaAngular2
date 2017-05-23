@@ -1,17 +1,25 @@
-<h1>SuperAgenda</h1>
+<div class="container">
+  <!--Titulo -->
+  <header>
+    <h1>SuperAgenda</h1>
+  </header>
+  <!-- Barra de navegacion -->
+  <nav>
+    <ul>
+      <li>
+        <a routerLink="contactos"
+           routerLinkActive="marcada">
+           Contactos</a>
+      </li>
+      <li>
+        <a routerLink="/nuevo-contacto"
+           routerLinkActive="marcada">
+        Nuevo contacto</a>
+      </li>
+    </ul>
+  </nav>
 
-<!-- Barra de navegacion -->
-<nav>
-  <ul>
-    <li>
-      <a routerLink="contactos">Contactos</a>
-    </li>
-    <li>
-      <a routerLink="/nuevo-contacto">Nuevo contacto</a>
-    </li>
-  </ul>
-</nav>
-
-<!-- zona Dinámica -->
-<router-outlet></router-outlet>
+  <!-- zona Dinámica -->
+  <router-outlet></router-outlet>
+</div>
 

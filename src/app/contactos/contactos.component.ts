@@ -12,6 +12,7 @@ import {Contacto} from '../contacto';
 export class ContactosComponent implements OnInit {
 
   private _contactos: Contacto[];
+  private _contactoSelecctionado: Contacto;
 
   //Para hacer una inyección de dependencias debemos indicar en el constructor
 //de una clase un parametro tipado precisamente con el servicio que queremos usar.
@@ -48,6 +49,10 @@ export class ContactosComponent implements OnInit {
             });
           });
     }
+  }
+
+  verDetalles(contacto: Contacto): void{
+    this._contactoSelecctionado = contacto;
   }
 
 }

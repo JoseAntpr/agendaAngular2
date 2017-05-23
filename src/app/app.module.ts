@@ -10,14 +10,16 @@ import { FormularioAltaComponent } from './formulario-alta/formulario-alta.compo
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import { ContactosComponent } from './contactos/contactos.component';
 import { NuevoContactoComponent } from './nuevo-contacto/nuevo-contacto.component';
-import {ApiUrlProvider} from './configuracion'
+import {ApiUrlProvider} from './configuracion';
+import { DetallesContactoComponent } from './detalles-contacto/detalles-contacto.component'
 @NgModule({
   declarations: [
     AppComponent,
     ListaContactosComponent,
     FormularioAltaComponent,
     ContactosComponent,
-    NuevoContactoComponent
+    NuevoContactoComponent,
+    DetallesContactoComponent
   ],
   imports: [
     BrowserModule,

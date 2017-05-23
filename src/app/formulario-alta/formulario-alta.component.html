@@ -5,43 +5,57 @@ con '#nombre' creamos Template Reference Variable. Si asignamos como valor la di
 'NgForm', obtenemos una referencia a la instacia 'FormGroup' creada.-->
 <form ngForm #contacto="ngForm" (ngSubmit)="notificarCreacionContacto(contacto)">
     <!-- Con la directiva 'NgModel' obtenemos binding (Enlace a datos) bidireccional -->
-    <div>
-        <label for="nombre">Nombre</label>
-        <input 
-            type="text" 
-            ngModel
-            id="nombre"
-            name="nombre"
-            #nombre="ngModel"
-            minlength="3"
-            required>
-        <div *ngIf="nombre.touched && nombre.invalid" class="mensaje-error"> El nombre es un campo obligatorio</div>
+    <div class="row">
+        <div class="offset-by-three six columns">
+            <label for="nombre">Nombre</label>
+            <input 
+                type="text" 
+                class="u-full-width"
+                ngModel
+                id="nombre"
+                name="nombre"
+                #nombre="ngModel"
+                minlength="3"
+                required>
+            <div *ngIf="nombre.touched && nombre.invalid" class="mensaje-error"> El nombre es un campo obligatorio</div>
+        </div>
     </div>  
     <!-- Correo electrónico del contacto-->
-    <div>
-        <label for="email">Email</label>
-        <input type="text" ngModel id="email" name="email">
+    <div class="row">
+        <div class="offset-by-three six columns">
+            <label for="email">Email</label>
+            <input type="text" class="u-full-width" ngModel id="email" name="email" >
+        </div>
     </div>
 
     <!--Móvil del contacto -->
-    <div>
-        <label for="movil">Movil</label>
-        <input type="text" ngModel id="movil" name="movil">
+    <div class="row">
+        <div class="offset-by-three six columns">
+            <label for="movil">Movil</label>
+            <input type="text" class="u-full-width" ngModel id="movil" name="movil">
+        </div>
     </div>
 
     <!-- Cuenta de Facebook del contacto-->
-    <div>
-        <label for="facebook">Facebook</label>
-        <input type="text" ngModel id="facebook" name="facebook">
+     <div class="row">
+        <div class="offset-by-three six columns">
+            <label for="facebook">Facebook</label>
+            <input type="text" class="u-full-width" ngModel id="facebook" name="facebook">
+        </div>
     </div>
 
     <!-- Cuenta de Twitter del contacto -->
-    <div>
-        <label for="twitter">Twitter</label>
-        <input type="text" ngModel id="twitter" name="twitter">
+     <div class="row">
+        <div class="offset-by-three six columns">
+            <label for="twitter">Twitter</label>
+            <input type="text" class="u-full-width" ngModel id="twitter" name="twitter">
+        </div>
     </div>
 
-
-    <button type="submit" [disabled]="contacto.invalid">Guardar </button>    
+    <div class="row">
+        <div class="offset-by-three six columns">
+            <button type="submit" class="u-full-width button-primary" [disabled]="contacto.invalid">Guardar </button> 
+        </div>
+    </div>   
 </form>
 

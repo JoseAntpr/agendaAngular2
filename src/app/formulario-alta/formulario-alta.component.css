@@ -12,3 +12,7 @@ input.ng-touched.ng-valid{
 .mensaje-error{
     color: red;
 }
+
+button:disabled {
+    
+}

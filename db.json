@@ -1,0 +1,20 @@
+{
+  "contactos": [
+    {
+      "nombre": "Tim Cook",
+      "email": "timcook@apple.com",
+      "movil": "444987654",
+      "facebook": "Tim Cook",
+      "twitter": "@tim_cook",
+      "id": 2
+    },
+    {
+      "nombre": "Steve Jobs",
+      "email": "steve@apple.com",
+      "movil": "657895675",
+      "facebook": "Steve Jobs",
+      "twitter": "steve_jobs",
+      "id": 3
+    }
+  ]
+}
